@@ -14,6 +14,8 @@ tools/**/*
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+/VersionAssemblyInfo.cs
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
