@@ -20,6 +20,9 @@ namespace Cake.Gulp
             return "Gulp Runner";
         }
 
+        /// <summary>
+        /// Executes gulp
+        /// </summary>
         public abstract void Execute();
     }
 }

@@ -10,6 +10,9 @@ namespace Cake.Gulp
         {
         }
 
+        /// <summary>
+        /// Executes gulp from the global installation
+        /// </summary>
         public override void Execute()
         {
             var args = new ProcessArgumentBuilder();
