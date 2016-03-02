@@ -18,7 +18,6 @@ var artifacts               = MakeAbsolute(Directory(Argument("artifactPath", ".
 var testResultsPath         = MakeAbsolute(Directory(artifacts + "./test-results"));
 var versionAssemblyInfo     = MakeAbsolute(File(Argument("versionAssemblyInfo", "./src/VersionAssemblyInfo.cs")));
 
-FilePath webProjectPath              = null;
 SolutionParserResult solution        = null;
 GitVersion versionInfo               = null;
 
@@ -93,6 +92,16 @@ Task("Build")
     );
 });
 
+Task("Copy-Files")
+    .IsDependentOn("Build")
+    .Does(() => 
+{
+    CreateDirectory(artifacts + "/build");
+    var project = solution.Projects.FirstOrDefault(x => x.Name == "Cake.Gulp");
+    var files = GetFiles(project.Path.GetDirectory() +"/bin/" +configuration +"/Cake.Gulp.*");
+    CopyFiles(files, artifacts +"/build");
+});
+
 Task("Package")
     .IsDependentOn("Clean")
     .IsDependentOn("Restore-NuGet-Packages")
@@ -158,6 +167,7 @@ Task("Default")
     .IsDependentOn("Update-Version-Info")
     .IsDependentOn("Update-AppVeyor-Build-Number")
     .IsDependentOn("Build")
+    .IsDependentOn("Copy-Files")
     .IsDependentOn("Run-Unit-Tests")
     .IsDependentOn("Package")
     .IsDependentOn("Upload-AppVeyor-Artifacts")

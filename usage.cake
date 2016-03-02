@@ -1,5 +1,5 @@
 // #addin "Cake.Gulp"
-#r "src\Cake.Gulp\bin\Debug\Cake.Gulp.dll"
+#r "artifacts\build\Cake.Gulp.dll"
 
 Task("Default")
     .Does(() => 
