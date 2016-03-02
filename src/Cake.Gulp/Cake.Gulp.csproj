@@ -57,6 +57,7 @@
     <Compile Include="GulpRunnerAliases.cs" />
     <Compile Include="GulpRunnerFactory.cs" />
     <Compile Include="GulpRunnerSettings.cs" />
+    <Compile Include="Properties\Namespaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
