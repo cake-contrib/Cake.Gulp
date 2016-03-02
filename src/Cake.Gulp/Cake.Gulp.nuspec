@@ -1,25 +1,23 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>Cake.Gulp</id>
+    <title>Cake.Gulp</title>
+    <authors>Phil Oyston</authors>
+    <owners>Phil Oyston</owners>
     <licenseUrl>https://github.com/Philo/cake-gulp/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Philo/cake-gulp</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <summary>Adds Gulp helpers for Cake</summary>
+    <description>A set of aliases for Cake to help with running Gulp scripts as part of a build</description>
     <tags>Cake Script Build Gulp</tags>
     <dependencies>
-      <group>
-        <dependency id="Cake.Core" version="0.9.0" />
-      </group>
+      <dependency id="Cake.Core" version="0.9.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\artifacts\build\$id$.xml" target="lib\net45" />
-    <file src="..\..\artifacts\build\$id$.dll" target="lib\net45" />
+    <file src="..\..\artifacts\build\Cake.Gulp.xml" target="lib\net45" />
+    <file src="..\..\artifacts\build\Cake.Gulp.dll" target="lib\net45" />
   </files>
 </package>
