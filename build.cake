@@ -12,13 +12,14 @@ var configuration = Argument("configuration", "Release");
 //////////////////////////////////////////////////////////////////////
 
 var solutionPath            = MakeAbsolute(File(Argument("solutionPath", "Cake.Gulp.sln")));
-// var testAssemblies          = "./tests/*Tests/bin/" +configuration +"/*Tests.dll";
+var projectName             = Argument("projectName", "Cake.Gulp");
 
 var artifacts               = MakeAbsolute(Directory(Argument("artifactPath", "./artifacts")));
 var testResultsPath         = MakeAbsolute(Directory(artifacts + "./test-results"));
 var versionAssemblyInfo     = MakeAbsolute(File(Argument("versionAssemblyInfo", "./src/VersionAssemblyInfo.cs")));
 
 SolutionParserResult solution        = null;
+SolutionProject project              = null;
 GitVersion versionInfo               = null;
 
 //////////////////////////////////////////////////////////////////////
@@ -29,7 +30,9 @@ Setup(() => {
     CreateDirectory(artifacts);
     
     if(!FileExists(solutionPath)) throw new Exception(string.Format("Solution file not found - {0}", solutionPath.ToString()));
-    solution = ParseSolution(solutionPath.ToString());    
+    solution = ParseSolution(solutionPath.ToString());
+    project = solution.Projects.FirstOrDefault(x => x.Name == projectName);
+    if(project == null || !FileExists(project.Path)) throw new Exception(string.Format("Project not found in solution - {0}", projectName));
 });
 
 Task("Clean")
@@ -97,8 +100,7 @@ Task("Copy-Files")
     .Does(() => 
 {
     CreateDirectory(artifacts + "/build");
-    var project = solution.Projects.FirstOrDefault(x => x.Name == "Cake.Gulp");
-    var files = GetFiles(project.Path.GetDirectory() +"/bin/" +configuration +"/Cake.Gulp.*");
+    var files = GetFiles(project.Path.GetDirectory() +"/bin/" +configuration +"/" +project.Name +".*");
     CopyFiles(files, artifacts +"/build");
 });
 
@@ -110,18 +112,11 @@ Task("Package")
 {
     CreateDirectory(Directory(artifacts +"/packages"));
 
-    foreach(var project in solution.Projects) {
-        var projectPath = project.Path;
-        
-        NuGetPack(project.Path, new NuGetPackSettings {
-            Id = project.Name,
-            Version = versionInfo.NuGetVersion,
-            OutputDirectory = Directory(artifacts +"/packages"),
-            Symbols = true,
-            Properties = new Dictionary<string, string>() { { "Configuration", configuration } }
-        });
-    }
-    
+    NuGetPack(project.Path, new NuGetPackSettings {
+        OutputDirectory = Directory(artifacts +"/packages"),
+        Symbols = true,
+        Properties = new Dictionary<string, string>() { { "Configuration", configuration } }
+    });
 });
 
 Task("Run-Unit-Tests")
