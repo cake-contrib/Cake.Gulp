@@ -7,7 +7,7 @@ namespace Cake.Gulp
     /// <summary>
     /// contains functionality to interact with gulp
     /// </summary>
-    [CakeAliasCategory("Gulp")]
+    [CakeAliasCategory("Node")]
     public static class GulpRunnerAliases
     {
         /// <summary>
@@ -15,6 +15,66 @@ namespace Cake.Gulp
         /// </summary>
         /// <param name="context">The cake context</param>
         /// <returns></returns>
+        /// <example>
+        /// <para>Run 'gulp' from your local gulp installation</para>
+        /// <para>Cake task:</para>
+        /// <code>
+        /// <![CDATA[
+        /// Task("Gulp")
+        ///     .Does(() =>
+        /// {
+        ///     Gulp.Local.Execute();
+        /// });
+        /// ]]>
+        /// </code>
+        /// <para>Run 'gulp' from your global gulp installation</para>
+        /// <para>Cake task:</para>
+        /// <code>
+        /// <![CDATA[
+        /// Task("Gulp")
+        ///     .Does(() =>
+        /// {
+        ///     Gulp.Global.Execute();
+        /// });
+        /// ]]>
+        /// </code>
+        /// <para>Run 'gulp --gulpfile gulpbuild.js'</para>
+        /// <para>Cake task:</para>
+        /// <code>
+        /// <![CDATA[
+        /// Task("Gulp")
+        ///     .Does(() =>
+        /// {
+        ///     Gulp.Local.Execute(settings => settings.WithGulpFile("gulpbuild.js"));
+        ///     
+        ///     Gulp.Global.Execute(settings => settings.WithGulpFile("gulpbuild.js"));
+        /// });
+        /// ]]>
+        /// </code>
+        /// <para>Run 'gulp ci'</para>
+        /// <para>Cake task:</para>
+        /// <code>
+        /// <![CDATA[
+        /// Task("Gulp")
+        ///     .Does(() =>
+        /// {
+        ///     Gulp.Local.Execute(settings => settings.WithArgments("ci"));
+        ///     Gulp.Global.Execute(settings => settings.WithArgments("ci"));
+        /// });
+        /// ]]>
+        /// </code>
+        /// <para>Run 'gulp ci --dist=./artifacts/dist'</para>
+        /// <para>Cake task:</para>
+        /// <code>
+        /// <![CDATA[
+        /// Task("Gulp")
+        ///     .Does(() =>
+        /// {
+        ///     Gulp.Local.Execute(settings => settings.WithArguments("ci --dist=./artifacts/dist"));
+        /// });
+        /// ]]>
+        /// </code>
+        /// </example>
         [CakePropertyAlias(Cache = true)]
         public static GulpRunnerFactory Gulp(this ICakeContext context)
         {
