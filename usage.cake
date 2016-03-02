@@ -1,13 +1,24 @@
-#addin "Cake.Gulp"
+// #addin "Cake.Gulp"
+#r "src\Cake.Gulp\bin\Debug\Cake.Gulp.dll"
 
 Task("Default")
     .Does(() => 
     {
-        // Executes gulp from a global installation (npm install -g gulp)
-        Gulp.Global.Execute();
+        try {
+            Information("Running Global Gulp");
+            // Executes gulp from a global installation (npm install -g gulp)
+            Gulp.Global.Execute();
+        } catch(Exception ex) {
+            Error(ex.ToString());
+        }
         
-        // Executes gulp from a local installation (npm install gulp)
-        Gulp.Local.Execute();
+        try {
+            Information("Running Local Gulp");
+            // Executes gulp from a local installation (npm install gulp)
+            Gulp.Local.Execute(settings => settings.WithGulpFile("gulpfile.js"));
+        } catch(Exception ex) {
+            Error(ex.ToString());
+        }
     });
         
 //////////////////////////////////////////////////////////////////////

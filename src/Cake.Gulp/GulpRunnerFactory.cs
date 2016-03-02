@@ -3,6 +3,9 @@ using Cake.Core.IO;
 
 namespace Cake.Gulp
 {
+    /// <summary>
+    /// Returns a gulp runner based on either a local or global gulp installation via npm
+    /// </summary>
     public class GulpRunnerFactory
     {
         private readonly IFileSystem _fileSystem;
@@ -18,8 +21,15 @@ namespace Cake.Gulp
             _processRunner = processRunner;
             _globber = globber;
         }
-
-        public GulpRunner Local => new GulpLocalRunner(_fileSystem, _environment, _processRunner, _globber);
-        public GulpRunner Global => new GulpGlobalRunner(_fileSystem, _environment, _processRunner, _globber);
+        
+        /// <summary>
+        /// Get a gulp local runner based on a local gulp installation, a local installation is achieved through `npm install gulp`
+        /// </summary>
+        public GulpRunner<GulpLocalRunnerSettings> Local => new GulpLocalRunner(_fileSystem, _environment, _processRunner, _globber);
+        
+        /// <summary>
+        /// Get a gulp global runner based on a global gulp installation, a global installation is achieved through `npm install gulp -g`
+        /// </summary>
+        public GulpRunner<GulpRunnerSettings> Global => new GulpGlobalRunner(_fileSystem, _environment, _processRunner, _globber);
     }
 }

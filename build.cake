@@ -11,12 +11,12 @@ var configuration = Argument("configuration", "Release");
 // PREPARATION
 //////////////////////////////////////////////////////////////////////
 
-var solutionPath            = MakeAbsolute(File(Argument("solutionPath", "./src/Cake.Gulp.sln")));
+var solutionPath            = MakeAbsolute(File(Argument("solutionPath", "Cake.Gulp.sln")));
 // var testAssemblies          = "./tests/*Tests/bin/" +configuration +"/*Tests.dll";
 
 var artifacts               = MakeAbsolute(Directory(Argument("artifactPath", "./artifacts")));
 var testResultsPath         = MakeAbsolute(Directory(artifacts + "./test-results"));
-var versionAssemblyInfo     = MakeAbsolute(File(Argument("versionAssemblyInfo", "VersionAssemblyInfo.cs")));
+var versionAssemblyInfo     = MakeAbsolute(File(Argument("versionAssemblyInfo", "./src/VersionAssemblyInfo.cs")));
 
 FilePath webProjectPath              = null;
 SolutionParserResult solution        = null;
