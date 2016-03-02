@@ -113,6 +113,7 @@ Task("Package")
     CreateDirectory(Directory(artifacts +"/packages"));
 
     NuGetPack(project.Path, new NuGetPackSettings {
+        Version = versionInfo.NuGetVersionV2,
         OutputDirectory = Directory(artifacts +"/packages"),
         Symbols = true,
         Properties = new Dictionary<string, string>() { { "Configuration", configuration } }

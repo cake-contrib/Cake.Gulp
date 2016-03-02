@@ -6,12 +6,12 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/Philo/cake-npm/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/Philo/cake-npm</projectUrl>
+    <licenseUrl>https://github.com/Philo/cake-gulp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Philo/cake-gulp</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <tags>Cake Script Build Npm</tags>
+    <tags>Cake Script Build Gulp</tags>
     <dependencies>
       <group>
         <dependency id="Cake.Core" version="0.9.0" />
