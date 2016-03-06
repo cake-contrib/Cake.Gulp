@@ -12,9 +12,6 @@
     <summary>Adds Gulp helpers for Cake</summary>
     <description>A set of aliases for Cake to help with running Gulp scripts as part of a build</description>
     <tags>Cake Script Build Gulp</tags>
-    <dependencies>
-      <dependency id="Cake.Core" version="0.9.0" />
-    </dependencies>
   </metadata>
   <files>
     <file src="..\..\artifacts\build\Cake.Gulp.xml" target="lib\net45" />

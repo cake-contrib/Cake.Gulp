@@ -51,6 +51,8 @@ namespace Cake.Gulp
         protected override IEnumerable<string> GetToolExecutableNames()
         {
             yield return "node.exe";
+            yield return "node";
+            yield return "nodejs";
         }
     }
 }

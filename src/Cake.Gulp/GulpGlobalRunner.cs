@@ -45,6 +45,7 @@ namespace Cake.Gulp
         protected override IEnumerable<string> GetToolExecutableNames()
         {
             yield return "gulp.cmd";
+            yield return "gulp";
         }
     }
 }
