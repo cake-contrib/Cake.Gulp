@@ -33,6 +33,7 @@ namespace Cake.Gulp
             configure?.Invoke(settings);
 
             var args = new ProcessArgumentBuilder();
+            settings.Evaluate(args);
             Run(settings, args);
         }
 
