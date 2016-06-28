@@ -21,6 +21,13 @@ namespace Cake.Gulp
             FileSystem = fileSystem;
         }
 
+		/// <summary>
+		/// Create a new instance of the <see cref="GulpRunnerSettings"/> class.
+		/// </summary>
+		public GulpRunnerSettings() {
+		    
+	    }
+
         /// <summary>
         /// The gulpfile to run
         /// </summary>
