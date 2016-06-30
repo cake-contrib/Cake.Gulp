@@ -10,17 +10,27 @@
         {
             // Executes gulp from a global installation (npm install -g gulp)
             Gulp.Global.Execute();
-            
+
             // Executes gulp from a local installation (npm install gulp)
             Gulp.Local.Execute();
         });
 ```
 
 ## Scope
-At present the scope of the implementation of this Cake addin is to meet my own requirements, which are primarily to support a client side build process for a typical .NET based web application.  
-This process would usual involve a design or creative team developing and maintaining client side assets (js, scss) for which they have a gulp based development and build workflow.
 
-My goal to be to able to support this workflow as part of a complete solution build.
+Cake.Gulp currently supports the following npm commands:
 
-### I cant do <insert-function-here>
+* Executing gulp from a local installation with arguments
+* Executing gulp from a global installation with arguments
+
+My primary goal for the project is to support the build workflow I need as a .NET developer.
+
+Cake.Gulp will most likely be paired with [Cake.Npm](https://github.com/Philo/cake-npm) to support the installation of gulp itself along with any dependencies your gulp file requires.
+
+## Tests
+
+Cake.Gulp is covered by a set of unit tests contributed by @nengberg
+
+## I cant do _<insert-function-here_
+
 See above, the initial release supports only the most basic functionality I need, if you have feature requests please submit them as issues

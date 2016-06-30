@@ -1,4 +1,5 @@
 #tool "xunit.runner.console"
+#tool "GitVersion.CommandLine"
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -16,11 +17,10 @@ var projectName             = Argument("projectName", "Cake.Gulp");
 
 var artifacts               = MakeAbsolute(Directory(Argument("artifactPath", "./artifacts")));
 var testResultsPath         = MakeAbsolute(Directory(artifacts + "./test-results"));
-var versionAssemblyInfo     = MakeAbsolute(File(Argument("versionAssemblyInfo", "./src/VersionAssemblyInfo.cs")));
+var versionAssemblyInfo     = MakeAbsolute(File(Argument("versionAssemblyInfo", "./VersionAssemblyInfo.cs")));
 var testAssemblies          = new List<FilePath> { 
                                 MakeAbsolute(File("./src/Cake.Gulp.Tests/bin/" + configuration + "/Cake.Gulp.Tests.dll"))
                               };
-
 
 SolutionParserResult solution        = null;
 SolutionProject project              = null;
@@ -30,7 +30,7 @@ GitVersion versionInfo               = null;
 // TASKS
 //////////////////////////////////////////////////////////////////////
 
-Setup(() => {
+Setup(ctx => {
     CreateDirectory(artifacts);
     
     if(!FileExists(solutionPath)) throw new Exception(string.Format("Solution file not found - {0}", solutionPath.ToString()));
@@ -132,7 +132,6 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-
     CreateDirectory(testResultsPath);
 
     var settings = new XUnit2Settings {
@@ -150,7 +149,7 @@ Task("Update-AppVeyor-Build-Number")
     .WithCriteria(() => AppVeyor.IsRunningOnAppVeyor)
     .Does(() =>
 {
-    AppVeyor.UpdateBuildVersion(versionInfo.FullSemVer +" (Build: " +AppVeyor.Environment.Build.Number +")");
+    AppVeyor.UpdateBuildVersion(versionInfo.FullSemVer +" | " +AppVeyor.Environment.Build.Number);
 });
 
 Task("Upload-AppVeyor-Artifacts")

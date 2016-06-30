@@ -21,7 +21,8 @@ namespace Cake.Gulp.Tests {
 			this.fixture.FileSystem.CreateFile(pathToGulpJs);
 			this.fixture.FileSystem.CreateFile("/abc");
 			this.fixture.FileSystem.CreateFile(this.gulpFile);
-		}
+            this.fixture.FileSystem.CreateFile("path-to-gulp/gulp.js");
+        }
 
 		[Fact]
 		public void Install_Settings_With_Gulp_File_Should_Add_Gulpfile_Argument()
@@ -42,5 +43,14 @@ namespace Cake.Gulp.Tests {
 
 			result.Args.ShouldBe("\"node_modules/gulp/bin/gulp.js\"");
 		}
-	}
+
+        [Fact]
+        public void Custom_Gulp_Path()
+        {
+            this.fixture.InstallSettings = s => s.SetPathToGulpJs("path-to-gulp/gulp.js");
+            var result = this.fixture.Run();
+
+            result.Args.ShouldBe("\"path-to-gulp/gulp.js\"");
+        }
+    }
 }

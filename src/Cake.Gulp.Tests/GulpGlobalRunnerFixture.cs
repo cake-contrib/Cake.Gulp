@@ -9,7 +9,7 @@ namespace Cake.Gulp.Tests {
 		public Action<GulpRunnerSettings> InstallSettings { get; set; }
 
 		protected override void RunTool() {
-			var tool = new GulpGlobalRunner(FileSystem, Environment, ProcessRunner, Globber);
+			var tool = new GulpGlobalRunner(FileSystem, Environment, ProcessRunner, Tools);
 			tool.Execute(InstallSettings);
 		}
 	}

@@ -84,7 +84,7 @@ namespace Cake.Gulp
                 throw new ArgumentNullException(nameof(context));
             }
 
-            return new GulpRunnerFactory(context.FileSystem, context.Environment, context.ProcessRunner, context.Globber);
+            return new GulpRunnerFactory(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
         }
     }
 }

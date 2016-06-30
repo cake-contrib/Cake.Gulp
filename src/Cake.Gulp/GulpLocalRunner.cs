@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Cake.Core;
 using Cake.Core.IO;
+using Cake.Core.Tooling;
 
 namespace Cake.Gulp
 {
@@ -19,8 +20,8 @@ namespace Cake.Gulp
         /// <param name="fileSystem">the file system</param>
         /// <param name="environment">The cake environment</param>
         /// <param name="processRunner">The cake process runner</param>
-        /// <param name="globber">The globber</param>
-        public GulpLocalRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IGlobber globber) : base(fileSystem, environment, processRunner, globber)
+        /// <param name="tools">The tools locator</param>
+        public GulpLocalRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
         {
             _fileSystem = fileSystem;
         }

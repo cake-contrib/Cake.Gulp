@@ -16,8 +16,8 @@ namespace Cake.Gulp
         /// <param name="fileSystem">the file system</param>
         /// <param name="environment">The cake environment</param>
         /// <param name="processRunner">The cake process runner</param>
-        /// <param name="globber">The globber</param>
-        protected GulpRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IGlobber globber) : base(fileSystem, environment, processRunner, globber)
+        /// <param name="tools">The tools locator</param>
+        protected GulpRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
         {
         }
 
