@@ -12,6 +12,13 @@ namespace Cake.Gulp
         {
         }
 
+		/// <summary>
+		/// Create a new instance of the <see cref="GulpLocalRunnerSettings"/> class.
+		/// </summary>
+		public GulpLocalRunnerSettings() {
+		    
+	    }
+
         /// <summary>
         /// Path to node modules
         /// </summary>

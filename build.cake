@@ -17,6 +17,10 @@ var projectName             = Argument("projectName", "Cake.Gulp");
 var artifacts               = MakeAbsolute(Directory(Argument("artifactPath", "./artifacts")));
 var testResultsPath         = MakeAbsolute(Directory(artifacts + "./test-results"));
 var versionAssemblyInfo     = MakeAbsolute(File(Argument("versionAssemblyInfo", "./src/VersionAssemblyInfo.cs")));
+var testAssemblies          = new List<FilePath> { 
+                                MakeAbsolute(File("./src/Cake.Gulp.Tests/bin/" + configuration + "/Cake.Gulp.Tests.dll"))
+                              };
+
 
 SolutionParserResult solution        = null;
 SolutionProject project              = null;
@@ -128,7 +132,7 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-/*
+
     CreateDirectory(testResultsPath);
 
     var settings = new XUnit2Settings {
@@ -138,7 +142,7 @@ Task("Run-Unit-Tests")
     };
     settings.ExcludeTrait("Category", "Integration");
     
-    XUnit2(testAssemblies, settings); */
+    XUnit2(testAssemblies, settings);
 });
 
 Task("Update-AppVeyor-Build-Number")
