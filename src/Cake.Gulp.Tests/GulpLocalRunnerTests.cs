@@ -11,11 +11,12 @@ namespace Cake.Gulp.Tests {
 		{
 			this._fixture = new GulpLocalRunnerFixture();
             this._gulpFile = "gulpfile.js";
-			const string pathToGulpJs = "/Working/node_modules/gulp/bin/gulp.js";
+			const string pathToGulpJs = "node_modules/gulp/bin/gulp.js";
 			this._fixture.FileSystem.CreateFile(pathToGulpJs);
-			this._fixture.FileSystem.CreateFile("/abc");
+            this._fixture.FileSystem.CreateFile("/Working/" +pathToGulpJs);
+            this._fixture.FileSystem.CreateFile("/abc");
 			this._fixture.FileSystem.CreateFile(this._gulpFile);
-            this._fixture.FileSystem.CreateFile("/Working/path-to-gulp/gulp.js");
+            this._fixture.FileSystem.CreateFile("path-to-gulp/gulp.js");
         }
 
 		[Fact]
@@ -25,7 +26,7 @@ namespace Cake.Gulp.Tests {
 
 			var result = this._fixture.Run();
 
-			result.Args.ShouldBe("\"/Working/node_modules/gulp/bin/gulp.js\" --gulpfile \"gulpfile.js\"");
+			result.Args.ShouldBe("\"node_modules/gulp/bin/gulp.js\" --gulpfile \"gulpfile.js\"");
 		}
 
 		[Fact]
@@ -35,7 +36,7 @@ namespace Cake.Gulp.Tests {
 
 			var result = this._fixture.Run();
 
-			result.Args.ShouldBe("\"/Working/node_modules/gulp/bin/gulp.js\"");
+			result.Args.ShouldBe("\"node_modules/gulp/bin/gulp.js\"");
 		}
 
         [Fact]
@@ -44,7 +45,7 @@ namespace Cake.Gulp.Tests {
             this._fixture.InstallSettings = s => s.SetPathToGulpJs("path-to-gulp/gulp.js");
             var result = this._fixture.Run();
 
-            result.Args.ShouldBe("\"/Working/path-to-gulp/gulp.js\"");
+            result.Args.ShouldBe("\"path-to-gulp/gulp.js\"");
         }
     }
 }

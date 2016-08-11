@@ -11,7 +11,7 @@ namespace Cake.Gulp
         /// <summary>
         /// Path to node modules
         /// </summary>
-        public FilePath PathToGulpJs { get; private set; } = "./node_modules/gulp/bin/gulp.js";
+        public FilePath PathToGulpJs { get; private set; } = "node_modules/gulp/bin/gulp.js";
 
         /// <summary>
         /// Overrides the default path to gulp javascript, the current working directory will be prepended to this path

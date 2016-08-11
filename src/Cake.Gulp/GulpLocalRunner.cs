@@ -35,13 +35,8 @@ namespace Cake.Gulp
             configure?.Invoke(settings);
             ValidateSettings(settings);
 
-            var workingDir = GetWorkingDirectory(settings);
-
-            var gulpJsPath = FilePath.FromString(workingDir +"/" + settings.PathToGulpJs);
-            if (!_fileSystem.Exist(gulpJsPath)) throw new FileNotFoundException($"unable to find local gulp installation at specified path [{gulpJsPath}], have you run 'npm install gulp'?");
-
             var args = new ProcessArgumentBuilder();
-            args.AppendQuoted(gulpJsPath.ToString());
+            args.AppendQuoted(settings.PathToGulpJs.ToString());
             settings.Evaluate(args);
 
             Run(settings, args);
