@@ -8,31 +8,19 @@ namespace Cake.Gulp
     /// </summary>
     public class GulpLocalRunnerSettings : GulpRunnerSettings
     {
-        internal GulpLocalRunnerSettings(IFileSystem fileSystem) : base(fileSystem)
-        {
-        }
-
-		/// <summary>
-		/// Create a new instance of the <see cref="GulpLocalRunnerSettings"/> class.
-		/// </summary>
-		public GulpLocalRunnerSettings() {
-		    
-	    }
-
         /// <summary>
         /// Path to node modules
         /// </summary>
         public FilePath PathToGulpJs { get; private set; } = "./node_modules/gulp/bin/gulp.js";
 
         /// <summary>
-        /// Overrides the default path to gulp javascript
+        /// Overrides the default path to gulp javascript, the current working directory will be prepended to this path
         /// </summary>
         /// <param name="gulpJs">path to gulp if different from './node_modules/gulp/bin/gulp.js'</param>
         /// <returns></returns>
         /// <exception cref="FileNotFoundException"></exception>
         public GulpLocalRunnerSettings SetPathToGulpJs(FilePath gulpJs)
         {
-            if(!FileSystem.Exist(gulpJs)) throw new FileNotFoundException("gulp not found", gulpJs.FullPath);
             PathToGulpJs = gulpJs;
             return this;
         }

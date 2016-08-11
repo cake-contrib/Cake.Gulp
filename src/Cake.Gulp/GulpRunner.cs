@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Xml.Schema;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
@@ -10,6 +12,8 @@ namespace Cake.Gulp
     /// </summary>
     public abstract class GulpRunner<TSettings> : Tool<TSettings> where TSettings : GulpRunnerSettings
     {
+        private readonly IFileSystem _fileSystem;
+
         /// <summary>
         /// creates a new gulp runner
         /// </summary>
@@ -19,6 +23,7 @@ namespace Cake.Gulp
         /// <param name="tools">The tools locator</param>
         protected GulpRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
         {
+            _fileSystem = fileSystem;
         }
 
         /// <summary>
@@ -36,5 +41,18 @@ namespace Cake.Gulp
         /// Executes gulp
         /// </summary>
         public abstract void Execute(Action<TSettings> settings = null);
+
+        /// <summary>
+        /// Validates settings
+        /// </summary>
+        /// <param name="settings">the settings class</param>
+        /// <exception cref="FileNotFoundException">when gulp file does not exist</exception>
+        protected virtual void ValidateSettings(TSettings settings = null)
+        {
+            if (settings?.GulpFile != null && !_fileSystem.Exist(settings.GulpFile))
+            {
+                throw new FileNotFoundException("gulpfile not found", settings.GulpFile.FullPath);
+            }
+        }
     }
 }

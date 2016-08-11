@@ -11,7 +11,7 @@ namespace Cake.Gulp.Tests {
 
 		protected override void RunTool()
 		{
-			var tool = new GulpLocalRunner(FileSystem, Environment, ProcessRunner, Tools);
+            var tool = new GulpLocalRunner(FileSystem, Environment, ProcessRunner, Tools);
 			tool.Execute(InstallSettings);
 		}
 	}

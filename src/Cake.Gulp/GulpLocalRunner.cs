@@ -31,13 +31,17 @@ namespace Cake.Gulp
         /// </summary>
         public override void Execute(Action<GulpLocalRunnerSettings> configure = null)
         {
-            var settings = new GulpLocalRunnerSettings(_fileSystem);
+            var settings = new GulpLocalRunnerSettings();
             configure?.Invoke(settings);
+            ValidateSettings(settings);
 
-            if(!_fileSystem.Exist(settings.PathToGulpJs)) throw new FileNotFoundException($"unable to find local gulp installation at specified path [{settings.PathToGulpJs}], have you run 'npm install gulp'?");
+            var workingDir = GetWorkingDirectory(settings);
+
+            var gulpJsPath = FilePath.FromString(workingDir +"/" + settings.PathToGulpJs);
+            if (!_fileSystem.Exist(gulpJsPath)) throw new FileNotFoundException($"unable to find local gulp installation at specified path [{gulpJsPath}], have you run 'npm install gulp'?");
 
             var args = new ProcessArgumentBuilder();
-            args.AppendQuoted(settings.PathToGulpJs.ToString());
+            args.AppendQuoted(gulpJsPath.ToString());
             settings.Evaluate(args);
 
             Run(settings, args);

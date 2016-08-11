@@ -30,8 +30,9 @@ namespace Cake.Gulp
         /// </summary>
         public override void Execute(Action<GulpRunnerSettings> configure = null)
         {
-            var settings = new GulpRunnerSettings(_fileSystem);
+            var settings = new GulpRunnerSettings();
             configure?.Invoke(settings);
+            ValidateSettings(settings);
 
             var args = new ProcessArgumentBuilder();
             settings.Evaluate(args);

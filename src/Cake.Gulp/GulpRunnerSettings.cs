@@ -12,23 +12,6 @@ namespace Cake.Gulp
     public class GulpRunnerSettings : ToolSettings
     {
         /// <summary>
-        /// The file system
-        /// </summary>
-        protected readonly IFileSystem FileSystem;
-
-        internal GulpRunnerSettings(IFileSystem fileSystem)
-        {
-            FileSystem = fileSystem;
-        }
-
-		/// <summary>
-		/// Create a new instance of the <see cref="GulpRunnerSettings"/> class.
-		/// </summary>
-		public GulpRunnerSettings() {
-		    
-	    }
-
-        /// <summary>
         /// The gulpfile to run
         /// </summary>
         public FilePath GulpFile { get; private set; }
@@ -46,7 +29,6 @@ namespace Cake.Gulp
         public GulpRunnerSettings WithGulpFile(FilePath gulpfile)
         {
             if(gulpfile.GetExtension() != ".js") throw new ArgumentException("gulpfile should be a javascript file with the .js extension");
-            if(!FileSystem.Exist(gulpfile)) throw new FileNotFoundException("gulpfile not found", gulpfile.FullPath);
 
             GulpFile = gulpfile;
 
