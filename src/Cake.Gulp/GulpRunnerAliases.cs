@@ -58,8 +58,8 @@ namespace Cake.Gulp
         /// Task("Gulp")
         ///     .Does(() =>
         /// {
-        ///     Gulp.Local.Execute(settings => settings.WithArgments("ci"));
-        ///     Gulp.Global.Execute(settings => settings.WithArgments("ci"));
+        ///     Gulp.Local.Execute(settings => settings.WithArguments("ci"));
+        ///     Gulp.Global.Execute(settings => settings.WithArguments("ci"));
         /// });
         /// ]]>
         /// </code>
