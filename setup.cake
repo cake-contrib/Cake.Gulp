@@ -5,16 +5,16 @@ Environment.SetVariableNames();
 BuildParameters.SetParameters(context: Context, 
                             buildSystem: BuildSystem,
                             sourceDirectoryPath: "./src",
-                            title: "Cake.Grunt",
+                            title: "Cake.Gulp",
                             repositoryOwner: "cake-contrib",
-                            repositoryName: "Cake.Grunt",
+                            repositoryName: "Cake.Gulp",
                             appVeyorAccountName: "cakecontrib");
 
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context,
                             dupFinderExcludePattern: new string[] { 
-                                BuildParameters.RootDirectoryPath + "/src/Cake.Grunt.Tests/*.cs" },
+                                BuildParameters.RootDirectoryPath + "/src/Cake.Gulp.Tests/*.cs" },
                             testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* ",
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
