@@ -34,24 +34,24 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"GulpGlobalRunner",
-        content:"GulpGlobalRunner",
+        title:"GulpLocalRunner",
+        content:"GulpLocalRunner",
         description:'',
         tags:''
     });
 
     a({
         id:1,
-        title:"GulpLocalRunnerSettings",
-        content:"GulpLocalRunnerSettings",
+        title:"GulpRunner",
+        content:"GulpRunner",
         description:'',
         tags:''
     });
 
     a({
         id:2,
-        title:"GulpRunner",
-        content:"GulpRunner",
+        title:"GulpRunnerFactory",
+        content:"GulpRunnerFactory",
         description:'',
         tags:''
     });
@@ -66,16 +66,16 @@ var searchModule = function() {
 
     a({
         id:4,
-        title:"GulpRunnerFactory",
-        content:"GulpRunnerFactory",
+        title:"GulpLocalRunnerSettings",
+        content:"GulpLocalRunnerSettings",
         description:'',
         tags:''
     });
 
     a({
         id:5,
-        title:"GulpLocalRunner",
-        content:"GulpLocalRunner",
+        title:"GulpGlobalRunner",
+        content:"GulpGlobalRunner",
         description:'',
         tags:''
     });
@@ -89,14 +89,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpGlobalRunner',
-        title:"GulpGlobalRunner",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpLocalRunnerSettings',
-        title:"GulpLocalRunnerSettings",
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpLocalRunner',
+        title:"GulpLocalRunner",
         description:""
     });
 
@@ -107,20 +101,26 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerSettings',
-        title:"GulpRunnerSettings",
-        description:""
-    });
-
-    y({
         url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerFactory',
         title:"GulpRunnerFactory",
         description:""
     });
 
     y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpLocalRunner',
-        title:"GulpLocalRunner",
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerSettings',
+        title:"GulpRunnerSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpLocalRunnerSettings',
+        title:"GulpLocalRunnerSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpGlobalRunner',
+        title:"GulpGlobalRunner",
         description:""
     });
 

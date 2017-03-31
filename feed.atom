@@ -4,13 +4,13 @@
 	<id>http://cake-contrib.github.io/Cake.Gulp</id>
 	<title />
 	<rights>2017</rights>
-	<updated>2017-03-31T20:00:07Z</updated>
+	<updated>2017-03-31T20:26:23Z</updated>
 	<entry>
 		<author>
 			<name>gep13</name>
 		</author>
-		<link href="http://cake-contrib.github.io/Cake.Gulp/blog/new-release-0.1.0" />
-		<id>http://cake-contrib.github.io/Cake.Gulp/blog/new-release-0.1.0</id>
+		<link href="http://cake-contrib.github.io/Cake.Gulp/blog/new-release-0.7.0" />
+		<id>http://cake-contrib.github.io/Cake.Gulp/blog/new-release-0.7.0</id>
 		<title>New Release - 0.7.0</title>
 		<updated>2017-03-31T00:00:00Z</updated>
 		<summary>&lt;p&gt;In this release, the following issues have been addressed:&lt;/p&gt;</summary>
