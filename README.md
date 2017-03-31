@@ -1,36 +1,42 @@
-# cake-gulp
+# Cake.Gulp
 
-## Usage
+Cake.Gulp is a set of aliases for Cake to help with running Gulp scripts as part of a build.
 
-```c#
-    #addin "Cake.Gulp"
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://cake-contrib.mit-license.org)
 
-    Task("Default")
-        .Does(() => 
-        {
-            // Executes gulp from a global installation (npm install -g gulp)
-            Gulp.Global.Execute();
+## Information
 
-            // Executes gulp from a local installation (npm install gulp)
-            Gulp.Local.Execute();
-        });
+| | Stable | Pre-release |
+|---|---|---|
+|GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/cake-contrib/Cake.Gulp.svg)](https://github.com/cake-contrib/Cake.Gulp/releases/latest)|
+|NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.Gulp.svg)](https://www.nuget.org/packages/Cake.Gulp)|[![NuGet](https://img.shields.io/nuget/vpre/Cake.Gulp.svg)](https://www.nuget.org/packages/Cake.Gulp)|
+
+## Build Status
+
+|Develop|Master|
+|:--:|:--:|
+|[![Build status](https://ci.appveyor.com/api/projects/status/0tbbj0v683qf39oo/branch/develop?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-gulp/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/0tbbj0v683qf39oo/branch/develop?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-gulp/branch/master)|
+
+## Code Coverage
+
+[![Coverage Status](https://coveralls.io/repos/github/cake-contrib/Cake.Gulp/badge.svg?branch=develop)](https://coveralls.io/github/cake-contrib/Cake.Gulp?branch=develop)
+
+## Quick Links
+
+- [Documentation](https://cake-contrib.github.io/Cake.Gulp)
+
+## Chat Room
+
+Come join in the conversation about Cake.Gulp in our Gitter Chat Room
+
+[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)](https://gitter.im/cake-contrib/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+## Build
+
+To build this package we are using Cake.
+
+On Windows PowerShell run:
+
+```powershell
+./build
 ```
-
-## Scope
-
-Cake.Gulp currently supports the following npm commands:
-
-* Executing gulp from a local installation with arguments
-* Executing gulp from a global installation with arguments
-
-My primary goal for the project is to support the build workflow I need as a .NET developer.
-
-Cake.Gulp will most likely be paired with [Cake.Npm](https://github.com/Philo/cake-npm) to support the installation of gulp itself along with any dependencies your gulp file requires.
-
-## Tests
-
-Cake.Gulp is covered by a set of unit tests contributed by @nengberg
-
-## I cant do _<insert-function-here_
-
-See above, the initial release supports only the most basic functionality I need, if you have feature requests please submit them as issues
