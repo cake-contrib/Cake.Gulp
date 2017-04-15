@@ -34,24 +34,24 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"GulpLocalRunner",
-        content:"GulpLocalRunner",
+        title:"GulpLocalRunnerSettings",
+        content:"GulpLocalRunnerSettings",
         description:'',
         tags:''
     });
 
     a({
         id:1,
-        title:"GulpRunner",
-        content:"GulpRunner",
+        title:"GulpGlobalRunner",
+        content:"GulpGlobalRunner",
         description:'',
         tags:''
     });
 
     a({
         id:2,
-        title:"GulpRunnerFactory",
-        content:"GulpRunnerFactory",
+        title:"GulpLocalRunner",
+        content:"GulpLocalRunner",
         description:'',
         tags:''
     });
@@ -66,50 +66,26 @@ var searchModule = function() {
 
     a({
         id:4,
-        title:"GulpLocalRunnerSettings",
-        content:"GulpLocalRunnerSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:5,
-        title:"GulpGlobalRunner",
-        content:"GulpGlobalRunner",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:6,
         title:"GulpRunnerAliases",
         content:"GulpRunnerAliases",
         description:'',
         tags:''
     });
 
-    y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpLocalRunner',
-        title:"GulpLocalRunner",
-        description:""
+    a({
+        id:5,
+        title:"GulpRunner",
+        content:"GulpRunner",
+        description:'',
+        tags:''
     });
 
-    y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunner_1',
-        title:"GulpRunner<TSettings>",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerFactory',
+    a({
+        id:6,
         title:"GulpRunnerFactory",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerSettings',
-        title:"GulpRunnerSettings",
-        description:""
+        content:"GulpRunnerFactory",
+        description:'',
+        tags:''
     });
 
     y({
@@ -125,8 +101,32 @@ var searchModule = function() {
     });
 
     y({
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpLocalRunner',
+        title:"GulpLocalRunner",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerSettings',
+        title:"GulpRunnerSettings",
+        description:""
+    });
+
+    y({
         url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerAliases',
         title:"GulpRunnerAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunner_1',
+        title:"GulpRunner<TSettings>",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Gulp/Cake.Gulp/api/Cake.Gulp/GulpRunnerFactory',
+        title:"GulpRunnerFactory",
         description:""
     });
 
