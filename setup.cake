@@ -7,9 +7,12 @@ BuildParameters.SetParameters(context: Context,
                             sourceDirectoryPath: "./src",
                             title: "Cake.Gulp",
                             repositoryOwner: "cake-contrib",
-                            repositoryName: "Cake.Gulp",
-                            appVeyorAccountName: "cakecontrib");
+                            repositoryName: "cake-gulp",
+                            appVeyorAccountName: "cakecontrib",
+							shouldRunDupFinder: false,
+							shouldRunInspectCode: false);
 
+							
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context,
@@ -19,4 +22,4 @@ ToolSettings.SetToolSettings(context: Context,
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
-Build.Run();
+Build.RunDotNetCore();
