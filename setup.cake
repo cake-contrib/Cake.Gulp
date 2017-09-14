@@ -10,9 +10,6 @@ BuildParameters.SetParameters(context: Context,
                             repositoryName: "Cake.Gulp",
                             appVeyorAccountName: "cakecontrib");
 
-BuildParameters.Tasks.DupFinderTask.Task.Actions.Clear();
-
-
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context,
