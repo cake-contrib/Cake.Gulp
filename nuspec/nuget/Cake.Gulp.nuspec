@@ -14,8 +14,8 @@
     <tags>Cake Script Build Gulp</tags>
   </metadata>
   <files>
-    <file src="Cake.Gulp.xml" target="lib\net45" />
-    <file src="Cake.Gulp.dll" target="lib\net45" />
-    <file src="Cake.Gulp.xml" target="lib\net45" />
+    <file src="Cake.Gulp.xml" target="lib\net46" />
+    <file src="Cake.Gulp.dll" target="lib\net46" />
+    <file src="Cake.Gulp.xml" target="lib\net46" />
   </files>
 </package>
