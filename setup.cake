@@ -8,10 +8,10 @@ BuildParameters.SetParameters(context: Context,
                             title: "Cake.Gulp",
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.Gulp",
-                            appVeyorAccountName: "cakecontrib");
+                            appVeyorAccountName: "cakecontrib",
+							shouldRunDupFinder: true,
+							shouldRunInspectCode: true);
 
-BuildParameters.Tasks.DupFinderTask.Task.Actions.Clear();
-BuildParameters.Tasks.InspectCodeTask.Task.Actions.Clear();
 							
 BuildParameters.PrintParameters(Context);
 
