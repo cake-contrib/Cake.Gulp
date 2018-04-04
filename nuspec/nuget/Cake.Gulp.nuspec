@@ -12,10 +12,11 @@
     <summary>Adds Gulp helpers for Cake</summary>
     <description>A set of aliases for Cake to help with running Gulp scripts as part of a build</description>
     <tags>Cake Script Build Gulp</tags>
+    <releaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/0.9.0</releaseNotes>
   </metadata>
   <files>
-    <file src="Cake.Gulp.xml" target="lib\net46" />
-    <file src="Cake.Gulp.dll" target="lib\net46" />
-    <file src="Cake.Gulp.xml" target="lib\net46" />
+    <file src="net46\Cake.Gulp.dll" target="lib\net46" />
+    <file src="net46\Cake.Gulp.pdb" target="lib\net46" />
+    <file src="net46\Cake.Gulp.xml" target="lib\net46" />
   </files>
 </package>

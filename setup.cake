@@ -7,7 +7,7 @@ BuildParameters.SetParameters(context: Context,
                             sourceDirectoryPath: "./src",
                             title: "Cake.Gulp",
                             repositoryOwner: "cake-contrib",
-                            repositoryName: "cake-gulp",
+                            repositoryName: "Cake.Gulp",
                             appVeyorAccountName: "cakecontrib",
 							shouldRunDupFinder: false,
 							shouldRunInspectCode: false);
