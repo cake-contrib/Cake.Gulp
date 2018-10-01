@@ -18,13 +18,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.30.0">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
+    <Compile Include="..\SolutionInfo.cs" Link="SolutionInfo.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\SolutionInfo.cs" Link="SolutionInfo.cs" />
+    <PackageReference Include="Cake.Core" Version="0.28.0">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
