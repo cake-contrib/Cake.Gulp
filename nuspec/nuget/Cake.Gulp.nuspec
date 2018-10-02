@@ -13,7 +13,7 @@
     <summary>Adds Gulp helpers for Cake</summary>
     <description>A set of aliases for Cake to help with running Gulp scripts as part of a build</description>
     <tags>Cake Script Build Gulp</tags>
-    <releaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/0.10.0</releaseNotes>
+    <releaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/0.11.0</releaseNotes>
   </metadata>
   <files>
     <file src="net461\Cake.Gulp.dll" target="lib\net461" />
