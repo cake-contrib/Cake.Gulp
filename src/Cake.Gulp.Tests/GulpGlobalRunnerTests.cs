@@ -27,7 +27,7 @@ namespace Cake.Gulp.Tests {
 		}
 
 		[Fact]
-		public void Install_Settings_With_Gulp_File_Ánd_Arguments_Should_Add_Gulp_File_And_Additional_Arguments()
+		public void Install_Settings_With_Gulp_File_And_Arguments_Should_Add_Gulp_File_And_Additional_Arguments()
 		{
 			this.fixture.InstallSettings = s => s.WithGulpFile(this.gulpFile).WithArguments("--production");
 

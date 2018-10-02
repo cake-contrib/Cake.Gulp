@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <AssemblyName>Cake.Gulp</AssemblyName>
     <RootNamespace>Cake.Gulp</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -11,11 +11,10 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net46\Cake.Gulp.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\$(TargetFramework)\Cake.Gulp.xml</DocumentationFile>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net46\Cake.Gulp.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\$(TargetFramework)\Cake.Gulp.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
