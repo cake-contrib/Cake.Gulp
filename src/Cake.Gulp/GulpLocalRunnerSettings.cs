@@ -24,5 +24,17 @@ namespace Cake.Gulp
             PathToGulpJs = gulpJs;
             return this;
         }
+
+        /// <summary>
+        /// Overrides the default path to the NodeJs tool that will be used to run gulp.
+        /// </summary>
+        /// <param name="toolPath">path to NodeJs</param>
+        /// <returns></returns>
+        /// <exception cref="FileNotFoundException"></exception>
+        public GulpLocalRunnerSettings SetToolPath(FilePath toolPath)
+        {
+            ToolPath = toolPath;
+            return this;
+        }
     }
 }
