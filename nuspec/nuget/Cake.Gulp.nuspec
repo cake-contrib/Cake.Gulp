@@ -5,7 +5,7 @@
     <title>Cake.Gulp</title>
     <authors>Phil Oyston</authors>
     <owners>philo, pascalberger, cake-contrib</owners>
-    <licenseUrl>https://github.com/cake-contrib/Cake.Gulp/blob/master/LICENSE</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>https://github.com/cake-contrib/Cake.Gulp</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -13,7 +13,7 @@
     <summary>Adds Gulp helpers for Cake</summary>
     <description>A set of aliases for Cake to help with running Gulp scripts as part of a build</description>
     <tags>Cake Script Build Gulp</tags>
-    <releaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/0.11.0</releaseNotes>
+    <releaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/0.12.0</releaseNotes>
   </metadata>
   <files>
     <file src="net461\Cake.Gulp.dll" target="lib\net461" />
