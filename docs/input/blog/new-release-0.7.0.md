@@ -17,4 +17,4 @@ __Documentation__
 
 - [__#11__](https://github.com/cake-contrib/Cake.Gulp/issues/11) Add Wyam Documentation site
 
-Please do not hesitate to reach out in the [Gitter Channel](https://gitter.im/cake-contrib/Lobby) if you have any issues using this addin.
+Please do not hesitate to reach out in the [Discussions](https://github.com/cake-build/cake/discussions) if you have any issues using this addin.
