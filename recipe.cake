@@ -10,7 +10,8 @@ BuildParameters.SetParameters(context: Context,
                             repositoryName: "Cake.Gulp",
                             appVeyorAccountName: "cakecontrib",
                             shouldRunDupFinder: false,
-                            shouldRunInspectCode: false);
+                            shouldRunInspectCode: false,
+                            shouldRunDotNetCorePack: true);
 
 
 BuildParameters.PrintParameters(Context);
