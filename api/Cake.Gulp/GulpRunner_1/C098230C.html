@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Gulp/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Gulp/assets/img/favicon.ico" type="image/x-icon">
-        <title>Docs - API - GulpRunner&lt;TSettings&gt;.GulpRunner(IFileSystem, ICakeEnvironment, IProcessRunner, IToolLocator) Constructor</title>
-        <link href="/Cake.Gulp/assets/css/mermaid.css" rel="stylesheet">
+        <title>Cake.Gulp - API - GulpRunner&lt;TSettings&gt;.GulpRunner(IFileSystem, ICakeEnvironment, IProcessRunner, IToolLocator) Constructor</title>
         <link href="/Cake.Gulp/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Gulp/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.Gulp/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -22,6 +21,7 @@
         <script src="/Cake.Gulp/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/Cake.Gulp/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/Cake.Gulp/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.Gulp/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/Cake.Gulp/assets/js/html5shiv.min.js"></script>
         <script src="/Cake.Gulp/assets/js/respond.min.js"></script>
@@ -36,7 +36,7 @@
             <header class="main-header">   
                      
                 <a href="/Cake.Gulp/" class="logo">
-                            <span>Docs</span>
+                            <span>Cake.Gulp</span>
                 </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -57,6 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Gulp/docs">Documentation</a></li>
+        <li><a href="/Cake.Gulp/tasks">Tasks</a></li>
         <li><a href="/Cake.Gulp/blog">Blog</a></li>
         <li class="active"><a href="/Cake.Gulp/api">API</a></li>
  
@@ -80,10 +81,11 @@
 </div>
 
                 </section>
-                <section class="sidebar">                    
+                <section class="sidebar">    
+                                     
                     	
-	    <script src="/assets/js/lunr.min.js"></script>
-    <script src="/assets/js/searchIndex.js"></script>
+	    <script src="/Cake.Gulp/assets/js/lunr.min.js"></script>
+    <script src="/Cake.Gulp/assets/js/searchIndex.js"></script>
     <div class="sidebar-form">
         <div class="input-group">
             <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
@@ -108,7 +110,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -120,6 +122,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -140,6 +149,7 @@
 
 
                     </ul>
+                            
                 </section>                
             </aside>
             
@@ -150,7 +160,7 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.Gulp/api/Cake.Gulp/GulpRunner_1">GulpRunner<wbr>&lt;TSettings&gt;<wbr></a>.</h3>
+			<h3><a href="/Cake.Gulp/api/Cake.Gulp/GulpRunner_1">GulpRunner</a><wbr>&lt;<a href="/Cake.Gulp/api/Cake.Gulp/GulpRunner_1#typeparam-TSettings">TSettings</a>&gt;<wbr>.</h3>
 	<h1>GulpRunner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator)<wbr> <small>Constructor</small></h1>
 </section>
 <section class="content">
@@ -169,7 +179,7 @@
 						<dd><a href="/Cake.Gulp/api/Cake.Gulp">Cake<wbr>.Gulp</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.Gulp/api/Cake.Gulp/GulpRunner_1">GulpRunner<wbr>&lt;TSettings&gt;<wbr></a></dd>		
+						<dd><a href="/Cake.Gulp/api/Cake.Gulp/GulpRunner_1">GulpRunner</a><wbr>&lt;<a href="/Cake.Gulp/api/Cake.Gulp/GulpRunner_1#typeparam-TSettings">TSettings</a>&gt;<wbr></dd>		
 					
 				</dl>
   			</div>
@@ -259,22 +269,53 @@
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top

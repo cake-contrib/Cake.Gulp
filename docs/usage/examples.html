@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Gulp/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Gulp/assets/img/favicon.ico" type="image/x-icon">
-        <title>Docs - Examples</title>
-        <link href="/Cake.Gulp/assets/css/mermaid.css" rel="stylesheet">
+        <title>Cake.Gulp - Examples</title>
         <link href="/Cake.Gulp/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Gulp/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.Gulp/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -22,6 +21,7 @@
         <script src="/Cake.Gulp/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/Cake.Gulp/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/Cake.Gulp/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.Gulp/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/Cake.Gulp/assets/js/html5shiv.min.js"></script>
         <script src="/Cake.Gulp/assets/js/respond.min.js"></script>
@@ -36,7 +36,7 @@
             <header class="main-header">   
                      
                 <a href="/Cake.Gulp/" class="logo">
-                            <span>Docs</span>
+                            <span>Cake.Gulp</span>
                 </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -57,6 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li class="active"><a href="/Cake.Gulp/docs">Documentation</a></li>
+        <li><a href="/Cake.Gulp/tasks">Tasks</a></li>
         <li><a href="/Cake.Gulp/blog">Blog</a></li>
         <li><a href="/Cake.Gulp/api">API</a></li>
  
@@ -78,20 +79,24 @@
 </div>
 
                 </section>
-                <section class="sidebar">                    
+                <section class="sidebar">    
+                                     
                     
 
                     <ul class="sidebar-menu">
                         
+
                 <li class="treeview active">
                     <a href="/Cake.Gulp/docs/usage">Usage</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="selected"><a href="/Cake.Gulp/docs/usage/examples">Examples</a></li>
+                        
+                <li class="selected"><a href="/Cake.Gulp/docs/usage/examples">Examples</a></li>
 
                     </ul>
                 </li>
 
                     </ul>
+                            
                 </section>                
             </aside>
             
@@ -101,9 +106,9 @@
 
 
 
-	<section class="content-header">
-		<h1>Examples</h1>
-	</section>
+		<section class="content-header">
+			<h1>Examples</h1>
+		</section>
 	<section class="content">
 		<h1 id="build-script">Build Script</h1>
 <p>You can reference Cake.Gulp in your build script as a cake addin:</p>
@@ -148,22 +153,53 @@
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top

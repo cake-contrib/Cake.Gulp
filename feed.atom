@@ -1,18 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<link rel="self" href="http://cake-contrib.github.io/Cake.Gulp" />
 	<id>http://cake-contrib.github.io/Cake.Gulp</id>
-	<title />
-	<rights>2017</rights>
-	<updated>2017-06-26T07:49:59Z</updated>
+	<title>Cake.Gulp</title>
+	<link rel="self" href="http://cake-contrib.github.io/Cake.Gulp" />
+	<rights>2021</rights>
+	<updated>2021-12-07T06:18:29Z</updated>
 	<entry>
+		<id>http://cake-contrib.github.io/Cake.Gulp/blog/new-release-0.7.0</id>
+		<title>New Release - 0.7.0</title>
 		<author>
 			<name>gep13</name>
 		</author>
 		<link href="http://cake-contrib.github.io/Cake.Gulp/blog/new-release-0.7.0" />
-		<id>http://cake-contrib.github.io/Cake.Gulp/blog/new-release-0.7.0</id>
-		<title>New Release - 0.7.0</title>
 		<updated>2017-03-31T00:00:00Z</updated>
+		<content>&lt;h1 id="release"&gt;0.7.0 Release&lt;/h1&gt;
+&lt;p&gt;In this release, the following issues have been addressed:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Improvement&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Gulp/issues/8"&gt;&lt;strong&gt;#8&lt;/strong&gt;&lt;/a&gt; Convert this repo to use Cake.Recipe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.Gulp/issues/11"&gt;&lt;strong&gt;#11&lt;/strong&gt;&lt;/a&gt; Add Wyam Documentation site&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please do not hesitate to reach out in the &lt;a href="https://github.com/cake-build/cake/discussions"&gt;Discussions&lt;/a&gt; if you have any issues using this addin.&lt;/p&gt;
+</content>
 		<summary>&lt;p&gt;In this release, the following issues have been addressed:&lt;/p&gt;</summary>
 	</entry>
 </feed>
