@@ -11,6 +11,10 @@
     <Product>Cake.Gulp</Product>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(ProjectDir)../../README.md" Link="README.md" PackagePath="" Pack="true" />
+  </ItemGroup>
   
   <PropertyGroup>
     <StartYear>2016</StartYear>
@@ -29,6 +33,7 @@
     <PackageReleaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases</PackageReleaseNotes>
     <RootNamespace>Cake.Gulp</RootNamespace>
     <Version>0.0.1</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
