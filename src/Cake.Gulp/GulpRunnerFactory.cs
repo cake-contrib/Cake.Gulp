@@ -5,7 +5,7 @@ using Cake.Core.Tooling;
 namespace Cake.Gulp
 {
     /// <summary>
-    /// Returns a gulp runner based on either a local or global gulp installation via npm
+    /// Returns a gulp runner based on either a local or global gulp installation via npm.
     /// </summary>
     public class GulpRunnerFactory
     {
@@ -14,7 +14,10 @@ namespace Cake.Gulp
         private readonly IProcessRunner _processRunner;
         private readonly IToolLocator _tools;
 
-        internal GulpRunnerFactory(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner,
+        internal GulpRunnerFactory(
+            IFileSystem fileSystem,
+            ICakeEnvironment environment,
+            IProcessRunner processRunner,
             IToolLocator tools)
         {
             _fileSystem = fileSystem;
@@ -22,14 +25,14 @@ namespace Cake.Gulp
             _processRunner = processRunner;
             _tools = tools;
         }
-        
+
         /// <summary>
-        /// Get a gulp local runner based on a local gulp installation, a local installation is achieved through `npm install gulp`
+        /// Gets a gulp local runner based on a local gulp installation, a local installation is achieved through `npm install gulp`.
         /// </summary>
         public GulpRunner<GulpLocalRunnerSettings> Local => new GulpLocalRunner(_fileSystem, _environment, _processRunner, _tools);
-        
+
         /// <summary>
-        /// Get a gulp global runner based on a global gulp installation, a global installation is achieved through `npm install gulp -g`
+        /// Gets a gulp global runner based on a global gulp installation, a global installation is achieved through `npm install gulp -g`.
         /// </summary>
         public GulpRunner<GulpRunnerSettings> Global => new GulpGlobalRunner(_fileSystem, _environment, _processRunner, _tools);
     }
