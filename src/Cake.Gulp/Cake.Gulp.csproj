@@ -4,25 +4,39 @@
     <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <AssemblyName>Cake.Gulp</AssemblyName>
     <RootNamespace>Cake.Gulp</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PlatformTarget>anycpu</PlatformTarget>
     <DebugType>portable</DebugType>
+    <Company>Cake Contributions - Phil Oyston</Company>
+    <Product>Cake.Gulp</Product>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+  
+  <PropertyGroup>
+    <StartYear>2016</StartYear>
+    <EndYear>$([System.DateTime]::Today.Year)</EndYear>
+    <FullYear Condition="'$(StartYear)'=='$(EndYear)'">$(StartYear)</FullYear>
+    <FullYear Condition="'$(StartYear)'!='$(EndYear)'">$(StartYear)-$(EndYear)</FullYear>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\$(TargetFramework)\Cake.Gulp.xml</DocumentationFile>
+    <!-- Properties related to packaging -->
+    <Authors>Phil Oyston</Authors>
+    <Copyright>Copyright © Cake Contributions $(FullYear)</Copyright>
+    <Description>Provides a wrapper around Gulp functionality within a Cake build script</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/cake-contrib/Cake.Gulp</PackageProjectUrl>
+    <PackageTags>cake;cake-addin;build;gulp;cake-build;script;addin</PackageTags>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.Gulp.git</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases</PackageReleaseNotes>
+    <RootNamespace>Cake.Gulp</RootNamespace>
+    <Version>0.0.1</Version>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\$(TargetFramework)\Cake.Gulp.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="..\SolutionInfo.cs" Link="SolutionInfo.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
