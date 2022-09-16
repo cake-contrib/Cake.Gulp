@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
@@ -7,28 +6,31 @@ using Cake.Core.Tooling;
 namespace Cake.Gulp
 {
     /// <summary>
-    /// Gulp settings
+    /// Gulp settings.
     /// </summary>
     public class GulpRunnerSettings : ToolSettings
     {
         /// <summary>
-        /// The gulpfile to run
+        /// Gets the gulpfile to run.
         /// </summary>
         public FilePath GulpFile { get; private set; }
 
         /// <summary>
-        /// Argument string to pass to gulp
+        /// Gets the argument string to pass to gulp.
         /// </summary>
         public string Arguments { get; private set; }
 
         /// <summary>
-        /// The gulpfile to use
+        /// The gulpfile to use.
         /// </summary>
-        /// <param name="gulpfile">path to gulpfile</param>
-        /// <returns>the settings</returns>
+        /// <param name="gulpfile">path to gulpfile.</param>
+        /// <returns>the settings.</returns>
         public GulpRunnerSettings WithGulpFile(FilePath gulpfile)
         {
-            if(gulpfile.GetExtension() != ".js") throw new ArgumentException("gulpfile should be a javascript file with the .js extension");
+            if (gulpfile.GetExtension() != ".js")
+            {
+                throw new ArgumentException("gulpfile should be a javascript file with the .js extension");
+            }
 
             GulpFile = gulpfile;
 
@@ -36,10 +38,10 @@ namespace Cake.Gulp
         }
 
         /// <summary>
-        /// The argument string to pass to gulp
+        /// The argument string to pass to gulp.
         /// </summary>
-        /// <param name="arguments">an argument string</param>
-        /// <returns>the settings</returns>
+        /// <param name="arguments">an argument string.</param>
+        /// <returns>the settings.</returns>
         public GulpRunnerSettings WithArguments(string arguments)
         {
             Arguments = arguments;
@@ -48,18 +50,25 @@ namespace Cake.Gulp
 
         internal void Evaluate(ProcessArgumentBuilder args)
         {
-            if(GulpFile != null) args.AppendSwitchQuoted("--gulpfile", GulpFile.FullPath);
-            if (!string.IsNullOrWhiteSpace(Arguments)) args.Append(Arguments);
+            if (GulpFile != null)
+            {
+                args.AppendSwitchQuoted("--gulpfile", GulpFile.FullPath);
+            }
+
+            if (!string.IsNullOrWhiteSpace(Arguments))
+            {
+                args.Append(Arguments);
+            }
+
             EvaluateCore(args);
         }
 
         /// <summary>
-        /// evaluate options
+        /// evaluate options.
         /// </summary>
-        /// <param name="args"></param>
+        /// <param name="args">The <see cref="ProcessArgumentBuilder"/>.</param>
         protected virtual void EvaluateCore(ProcessArgumentBuilder args)
         {
-            
         }
     }
 }
