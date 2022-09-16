@@ -7,27 +7,29 @@ using Cake.Core.Tooling;
 namespace Cake.Gulp
 {
     /// <summary>
-    /// gulp global runner
+    /// gulp global runner.
     /// </summary>
     public class GulpGlobalRunner : GulpRunner<GulpRunnerSettings>
     {
         private readonly IFileSystem _fileSystem;
 
         /// <summary>
-        /// creates a new gulp global runner
+        /// Initializes a new instance of the <see cref="GulpGlobalRunner"/> class.
         /// </summary>
-        /// <param name="fileSystem">the file system</param>
-        /// <param name="environment">The cake environment</param>
-        /// <param name="processRunner">The cake process runner</param>
-        /// <param name="tools">The tools locator</param>
-        public GulpGlobalRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
+        /// <param name="fileSystem">the file system.</param>
+        /// <param name="environment">The cake environment.</param>
+        /// <param name="processRunner">The cake process runner.</param>
+        /// <param name="tools">The tools locator.</param>
+        public GulpGlobalRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
+            : base(fileSystem, environment, processRunner, tools)
         {
             _fileSystem = fileSystem;
         }
 
         /// <summary>
-        /// Executes gulp from the global installation
+        /// Executes gulp from the global installation.
         /// </summary>
+        /// <param name="configure">The action that configures the settings.</param>
         public override void Execute(Action<GulpRunnerSettings> configure = null)
         {
             var settings = new GulpRunnerSettings();

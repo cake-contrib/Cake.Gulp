@@ -5,18 +5,18 @@ using Cake.Core.Annotations;
 namespace Cake.Gulp
 {
     /// <summary>
-    /// contains functionality to interact with gulp
+    /// contains functionality to interact with gulp.
     /// </summary>
     [CakeAliasCategory("Node")]
     public static class GulpRunnerAliases
     {
         /// <summary>
-        /// Allows access to the gulp task orchestrator for either the local or global installation
+        /// Allows access to the gulp task orchestrator for either the local or global installation.
         /// </summary>
-        /// <param name="context">The cake context</param>
-        /// <returns></returns>
+        /// <param name="context">The cake context.</param>
+        /// <returns>A new instance of the <see cref="GulpRunnerFactory"/>.</returns>
         /// <example>
-        /// <para>Run 'gulp' from your local gulp installation</para>
+        /// <para>Run 'gulp' from your local gulp installation.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -27,7 +27,7 @@ namespace Cake.Gulp
         /// });
         /// ]]>
         /// </code>
-        /// <para>Run 'gulp' from your global gulp installation</para>
+        /// <para>Run 'gulp' from your global gulp installation.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -38,7 +38,7 @@ namespace Cake.Gulp
         /// });
         /// ]]>
         /// </code>
-        /// <para>Run 'gulp --gulpfile gulpbuild.js'</para>
+        /// <para>Run 'gulp --gulpfile gulpbuild.js'.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -46,12 +46,12 @@ namespace Cake.Gulp
         ///     .Does(() =>
         /// {
         ///     Gulp.Local.Execute(settings => settings.WithGulpFile("gulpbuild.js"));
-        ///     
+        ///
         ///     Gulp.Global.Execute(settings => settings.WithGulpFile("gulpbuild.js"));
         /// });
         /// ]]>
         /// </code>
-        /// <para>Run 'gulp ci'</para>
+        /// <para>Run 'gulp ci'.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -63,7 +63,7 @@ namespace Cake.Gulp
         /// });
         /// ]]>
         /// </code>
-        /// <para>Run 'gulp ci --dist=./artifacts/dist'</para>
+        /// <para>Run 'gulp ci --dist=./artifacts/dist'.</para>
         /// <para>Cake task:</para>
         /// <code>
         /// <![CDATA[
@@ -78,7 +78,6 @@ namespace Cake.Gulp
         [CakePropertyAlias(Cache = true)]
         public static GulpRunnerFactory Gulp(this ICakeContext context)
         {
-
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
