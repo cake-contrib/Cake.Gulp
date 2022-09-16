@@ -32,7 +32,7 @@
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Gulp</PackageProjectUrl>
     <PackageTags>cake;cake-addin;build;gulp;cake-build;script;addin</PackageTags>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Gulp.git</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/2.0.0</PackageReleaseNotes>
     <RootNamespace>Cake.Gulp</RootNamespace>
     <Version>0.0.1</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
