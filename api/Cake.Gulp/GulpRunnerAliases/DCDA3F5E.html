@@ -165,8 +165,8 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Allows access to the gulp task orchestrator for either the local or global installation
-    </div>
+     Allows access to the gulp task orchestrator for either the local or global installation.
+     </div>
 
 		<div class="panel panel-default">
   			<div class="panel-body">	
@@ -188,45 +188,45 @@ public static GulpRunnerFactory Gulp(this ICakeContext context)</code></pre>
 
 	<h1 id="Examples">Examples</h1>
 	<div>
-    <p>Run 'gulp' from your local gulp installation</p>
-    <p>Cake task:</p>
-    <pre><code class="cs">Task("Gulp")
+     <p>Run 'gulp' from your local gulp installation.</p>
+     <p>Cake task:</p>
+     <pre><code class="cs">Task("Gulp")
     .Does(() =&gt;
 {
     Gulp.Local.Execute();
 });</code></pre>
-    <p>Run 'gulp' from your global gulp installation</p>
-    <p>Cake task:</p>
-    <pre><code class="cs">Task("Gulp")
+     <p>Run 'gulp' from your global gulp installation.</p>
+     <p>Cake task:</p>
+     <pre><code class="cs">Task("Gulp")
     .Does(() =&gt;
 {
     Gulp.Global.Execute();
 });</code></pre>
-    <p>Run 'gulp --gulpfile gulpbuild.js'</p>
-    <p>Cake task:</p>
-    <pre><code class="cs">Task("Gulp")
-    .Does(() =&gt;
-{
-    Gulp.Local.Execute(settings =&gt; settings.WithGulpFile("gulpbuild.js"));
-    
-    Gulp.Global.Execute(settings =&gt; settings.WithGulpFile("gulpbuild.js"));
-});</code></pre>
-    <p>Run 'gulp ci'</p>
-    <p>Cake task:</p>
-    <pre><code class="cs">Task("Gulp")
+     <p>Run 'gulp --gulpfile gulpbuild.js'.</p>
+     <p>Cake task:</p>
+     <pre><code class="cs"> Task("Gulp")
+     .Does(() =&gt;
+ {
+     Gulp.Local.Execute(settings =&gt; settings.WithGulpFile("gulpbuild.js"));
+
+     Gulp.Global.Execute(settings =&gt; settings.WithGulpFile("gulpbuild.js"));
+ });</code></pre>
+     <p>Run 'gulp ci'.</p>
+     <p>Cake task:</p>
+     <pre><code class="cs">Task("Gulp")
     .Does(() =&gt;
 {
     Gulp.Local.Execute(settings =&gt; settings.WithArguments("ci"));
     Gulp.Global.Execute(settings =&gt; settings.WithArguments("ci"));
 });</code></pre>
-    <p>Run 'gulp ci --dist=./artifacts/dist'</p>
-    <p>Cake task:</p>
-    <pre><code class="cs">Task("Gulp")
+     <p>Run 'gulp ci --dist=./artifacts/dist'.</p>
+     <p>Cake task:</p>
+     <pre><code class="cs">Task("Gulp")
     .Does(() =&gt;
 {
     Gulp.Local.Execute(settings =&gt; settings.WithArguments("ci --dist=./artifacts/dist"));
 });</code></pre>
-    </div>
+     </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -262,7 +262,7 @@ public static GulpRunnerFactory Gulp(this ICakeContext context)</code></pre>
 					<tbody><tr>
 						<td>context</td>
 						<td>ICakeContext</td>
-						<td>The cake context</td>
+						<td>The cake context.</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -280,7 +280,7 @@ public static GulpRunnerFactory Gulp(this ICakeContext context)</code></pre>
 				</thead>
 				<tbody><tr>
 					<td><a href="/Cake.Gulp/api/Cake.Gulp/GulpRunnerFactory">GulpRunnerFactory</a></td>
-					<td></td>
+					<td>A new instance of the <code class="cs"><a href="/Cake.Gulp/api/Cake.Gulp/GulpRunnerFactory">GulpRunnerFactory</a></code>.</td>
 				</tr>
 			</tbody></table>
 		</div>
