@@ -39,76 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"GulpRunnerAliases",
-            content:"GulpRunnerAliases",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Gulp/api/Cake.Gulp/GulpRunnerAliases',
-            title:"GulpRunnerAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"GulpRunnerFactory",
-            content:"GulpRunnerFactory",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Gulp/api/Cake.Gulp/GulpRunnerFactory',
-            title:"GulpRunnerFactory",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"GulpRunner",
-            content:"GulpRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Gulp/api/Cake.Gulp/GulpRunner_1',
-            title:"GulpRunner<TSettings>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"GulpGlobalRunner",
-            content:"GulpGlobalRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Gulp/api/Cake.Gulp/GulpGlobalRunner',
-            title:"GulpGlobalRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
-            title:"GulpLocalRunnerSettings",
-            content:"GulpLocalRunnerSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Gulp/api/Cake.Gulp/GulpLocalRunnerSettings',
-            title:"GulpLocalRunnerSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:5,
             title:"GulpLocalRunner",
             content:"GulpLocalRunner",
             description:'',
@@ -122,7 +52,35 @@ var searchModule = function() {
     );
     a(
         {
-            id:6,
+            id:1,
+            title:"GulpLocalRunnerSettings",
+            content:"GulpLocalRunnerSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Gulp/api/Cake.Gulp/GulpLocalRunnerSettings',
+            title:"GulpLocalRunnerSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:2,
+            title:"GulpGlobalRunner",
+            content:"GulpGlobalRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Gulp/api/Cake.Gulp/GulpGlobalRunner',
+            title:"GulpGlobalRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
             title:"GulpRunnerSettings",
             content:"GulpRunnerSettings",
             description:'',
@@ -131,6 +89,48 @@ var searchModule = function() {
         {
             url:'/Cake.Gulp/api/Cake.Gulp/GulpRunnerSettings',
             title:"GulpRunnerSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"GulpRunnerAliases",
+            content:"GulpRunnerAliases",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Gulp/api/Cake.Gulp/GulpRunnerAliases',
+            title:"GulpRunnerAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"GulpRunner",
+            content:"GulpRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Gulp/api/Cake.Gulp/GulpRunner_1',
+            title:"GulpRunner<TSettings>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"GulpRunnerFactory",
+            content:"GulpRunnerFactory",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Gulp/api/Cake.Gulp/GulpRunnerFactory',
+            title:"GulpRunnerFactory",
             description:""
         }
     );
