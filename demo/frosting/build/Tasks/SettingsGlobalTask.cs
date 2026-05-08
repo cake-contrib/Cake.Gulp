@@ -1,3 +1,4 @@
+using System;
 using Cake.Common.Diagnostics;
 using Cake.Frosting;
 using Cake.Gulp;
@@ -13,20 +14,25 @@ namespace Build.Tasks
             settings.WithGulpFile("./gulpfile.js");
             settings.WithArguments("default --silent");
 
-            if (settings.GulpFile == null || !settings.GulpFile.FullPath.EndsWith("gulpfile.js"))
-            {
-                throw new System.Exception("GulpFile round-trip failed");
-            }
-
-            if (settings.Arguments != "default --silent")
-            {
-                throw new System.Exception("Arguments round-trip failed: " + settings.Arguments);
-            }
+            AssertThat(
+                settings.GulpFile != null && settings.GulpFile.FullPath.EndsWith("gulpfile.js"),
+                "GulpFile round-trip mismatch: " + (settings.GulpFile?.FullPath ?? "<null>"));
+            AssertThat(
+                settings.Arguments == "default --silent",
+                "Arguments round-trip mismatch: " + settings.Arguments);
 
             context.Information(
                 "GulpRunnerSettings OK (GulpFile={0}, Arguments={1})",
                 settings.GulpFile.FullPath,
                 settings.Arguments);
+        }
+
+        private static void AssertThat(bool condition, string message)
+        {
+            if (!condition)
+            {
+                throw new Exception("Assertion failed: " + message);
+            }
         }
     }
 }
