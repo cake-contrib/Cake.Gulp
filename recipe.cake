@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=3.0.1
+#load nuget:?package=Cake.Recipe&version=4.0.0
 
 Environment.SetVariableNames();
 
@@ -11,8 +11,8 @@ BuildParameters.SetParameters(context: Context,
                             appVeyorAccountName: "cakecontrib",
                             shouldRunInspectCode: false,
                             shouldRunDotNetCorePack: true,
-                            shouldRunCoveralls: false); // Disabled because it's currently failing
-
+                            preferredBuildProviderType: BuildProviderType.GitHubActions,
+                            shouldGenerateDocumentation: false);
 
 BuildParameters.PrintParameters(Context);
 
