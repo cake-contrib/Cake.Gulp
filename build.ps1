@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 Set-Location -LiteralPath $PSScriptRoot
 
 $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1'

@@ -7,6 +7,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PlatformTarget>anycpu</PlatformTarget>
     <DebugType>portable</DebugType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Company>Cake Contributions - Phil Oyston</Company>
     <Product>Cake.Gulp</Product>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
@@ -17,7 +19,7 @@
     <None Include="$(SolutionDir)/.editorconfig" Link=".editorconfig" />
     <None Include="$(ProjectDir)../../README.md" Link="README.md" PackagePath="" Pack="true" />
   </ItemGroup>
-  
+
   <PropertyGroup>
     <StartYear>2016</StartYear>
     <EndYear>$([System.DateTime]::Today.Year)</EndYear>
@@ -30,23 +32,32 @@
     <Description>Provides a wrapper around Gulp functionality within a Cake build script</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Gulp</PackageProjectUrl>
-    <PackageTags>cake;cake-addin;build;gulp;cake-build;script;addin</PackageTags>
+    <PackageTags>cake;cake-build;cake-addin;addin;script;build;gulp;node;tasks</PackageTags>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Gulp.git</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/2.0.0</PackageReleaseNotes>
-    <RootNamespace>Cake.Gulp</RootNamespace>
+    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.Gulp/releases/tag/$(Version)</PackageReleaseNotes>
     <Version>0.0.1</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="2.0.0" PrivateAssets="All" />
-    <PackageReference Include="CakeContrib.Guidelines" Version="1.3.0">
+    <CakeContribGuidelinesOmitRecommendedConfigFile Include="stylecop.json" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+    <PackageReference Include="Cake.Core" Version="2.0.0" PrivateAssets="All" />
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.7.0" PrivateAssets="All" />
+    <PackageReference Include="IDisposableAnalyzers" Version="4.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
 

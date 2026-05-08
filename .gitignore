@@ -274,3 +274,6 @@ __pycache__/
 tools/**
 !tools/packages.config
 BuildArtifacts/
+
+# Resharper / language-service caches
+*.lscache
